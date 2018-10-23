@@ -1,6 +1,8 @@
 :root {
 	--landing-page-color: rgb(95,158,160);
 	--heading-color: rgb(128,0,0);
+	--bg-maroon: rgb(139,0,0);
+	--bg-footer: rgb(135,206,250);
 }
 
 * {
@@ -8,18 +10,25 @@
 	padding: 0;
 	box-sizing: border-box;
 }
+
 h1, h2,
 h3, h4,
 h5, h6 {
 	color: var(--heading-color);
 }
-
+.container-fluid > div {
+	margin-bottom: 20px;
+}
 /**********************************/
 /*ABOVE IS THE INITIALIZATION PART*/
 /**********************************/
 
-.container-fluid {
-	padding: 0;
+#navbar {
+	width: 100%;
+}
+.navbar-brand img {
+	width: 100px;
+	height: 50px;
 }
 /*************************/
 /*THIS IS MY LANDING PAGE*/
@@ -46,10 +55,11 @@ h5, h6 {
 /**********************************/
 /*THIS IS THE START OF HOME BANNER*/
 /**********************************/
-.home-banner {
-	width: 100vw;
+
+#carousel-controls {
+	margin: 0 auto;
+	width: 100%;
 	height: calc(60vh - 60px);
-	background-color: lightblue;
 }
 .carousel-item img {
 	height: calc(60vh - 60px);
@@ -58,7 +68,6 @@ h5, h6 {
 .reponsive-note {
 	display: block;
 	position: absolute;
-	width: 30%;
 	top: 50%;
 	left: 5%;
 	transform: translateY(-50%);
@@ -70,27 +79,84 @@ h5, h6 {
 /********************************/
 /*THIS IS THE START OF ABOUT DIV*/
 /********************************/
-.about {
-	display: grid;
-	grid-template-columns: 1fr 1fr;	
+#about > div:first-child img,
+#about > div:last-child img {
+	width: 100%;
+	height: 150px;
 }
-.about > div {
-	width: 50vw;
-	height: 40vh;
-	padding: 30px;
+#about > div > div > div {
+	margin-bottom: 5px;
 }
-.about-details {
-	grid-area: 1/1/1/2;
-	background-color: grey;
+/**********************************/
+/*THIS IS THE START OF FACULTY DIV*/
+/**********************************/
+.card {
+	width: 100%;
 }
-.about-images {	
-	grid-area: 1/2/1/3;
-	background-color: lightgrey;
+.card img {
+	height: 200px;
 }
-.about-images {
-	width: 25%;
-	height: 25%;
+/*************************************/
+/*THIS IS THE START OF AFFILIATES DIV*/
+/*************************************/
+#affiliates ul {
+	display: flex;
+	text-align: center;
+	justify-content: center;
+	width: 100%;
 }
-.image-1 {
-	background-color: lightgreen;
+#affiliates li {
+	display: block;
+	float: left;
+	list-style: none;
+	margin-right: 10px;
+	width: 20%;
+}
+#affiliates img {
+	width: 50%;
+}
+/*************************************/
+/*THIS IS THE START OF Contact Link DIV*/
+/*************************************/
+#contactLink p {
+	padding: 0;
+	margin: 0;
+}
+#contactLink {
+	background-color: var(--bg-maroon);
+	padding-top: 10px;
+	padding-bottom: 10px;
+	color: white;
+}
+
+#contactLink button {
+	width: 100%;
+}
+
+/*********************************/
+/*THIS PART IS FOR CONTACT FOOTER*/
+/*********************************/
+#contactFooter > div:last-child {
+	background-color: var(--bg-footer);
+	padding-top: 1rem;
+}
+#contactFooter ul {
+	display: flex;
+	text-align: center;
+	justify-content: center;
+	width: 100%;
+}
+#contactFooter li {
+	display: block;
+	float: left;
+	list-style: none;
+	margin-right: 10px;
+	width: 20%;
+}
+#contactFooter a {
+	text-decoration: none;
+}
+#contactFooter > div:last-child i {
+	font-size: 3rem;
+	color: rgb(178,34,34);
 }
