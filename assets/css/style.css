@@ -1,5 +1,96 @@
+:root {
+	--landing-page-color: rgb(95,158,160);
+	--heading-color: rgb(128,0,0);
+}
+
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+}
+h1, h2,
+h3, h4,
+h5, h6 {
+	color: var(--heading-color);
+}
+
+/**********************************/
+/*ABOVE IS THE INITIALIZATION PART*/
+/**********************************/
+
+.container-fluid {
+	padding: 0;
+}
+/*************************/
+/*THIS IS MY LANDING PAGE*/
+/*************************/
+.landing-page {
+	text-align: center;
+	background-color: var(--landing-page-color);	
+	width: 100vw;
+	height: 100vh;
+}
+.landing-page * {
+	padding-top: 15vh;
+}
+.landing-page h1 {
+	color: white;
+	font-weight: bolder;
+	font-size: 4rem;
+}
+.landing-page i {
+	font-size: 3rem;
+}
+
+
+/**********************************/
+/*THIS IS THE START OF HOME BANNER*/
+/**********************************/
+.home-banner {
+	width: 100vw;
+	height: calc(60vh - 60px);
+	background-color: lightblue;
+}
+.carousel-item img {
+	height: calc(60vh - 60px);
+}
+
+.reponsive-note {
+	display: block;
+	position: absolute;
+	width: 30%;
+	top: 50%;
+	left: 5%;
+	transform: translateY(-50%);
+}
+.reponsive-note label {
+	color: var(--heading-color);
+}
+
+/********************************/
+/*THIS IS THE START OF ABOUT DIV*/
+/********************************/
+.about {
+	display: grid;
+	grid-template-columns: 1fr 1fr;	
+}
+.about > div {
+	width: 50vw;
+	height: 40vh;
+	padding: 30px;
+}
+.about-details {
+	grid-area: 1/1/1/2;
+	background-color: grey;
+}
+.about-images {	
+	grid-area: 1/2/1/3;
+	background-color: lightgrey;
+}
+.about-images {
+	width: 25%;
+	height: 25%;
+}
+.image-1 {
+	background-color: lightgreen;
 }
