@@ -1,8 +1,12 @@
 :root {
-	--landing-page-color: rgb(95,158,160);
+	--landing-page-bgcolor: rgb(95,158,160);
+	--landing-page-color: #17a2b8;
+	--landing-page-font: 'Kaushan Script', cursive;
+	--heading-carousel-color: #17a2b8;
 	--heading-color: rgb(128,0,0);
 	--bg-maroon: rgb(139,0,0);
-	--bg-footer: rgb(135,206,250);
+	--font-maroon: rgb(139,0,0);
+	--bg-footer: #17a2b8; /*rgb(135,206,250);*/
 }
 
 * {
@@ -14,10 +18,17 @@
 h1, h2,
 h3, h4,
 h5, h6 {
-	color: var(--heading-color);
+	color: var(--heading-carousel-color);
 }
-.container-fluid > div {
-	margin-bottom: 20px;
+.btn {
+	border-radius: 0;
+}
+.container-fluid > div > div {
+	margin-bottom: 40px;
+}
+.container-fluid > div > div:first-child, 
+.container-fluid > div:nth-child(2) {
+	margin-bottom: 0;
 }
 /**********************************/
 /*ABOVE IS THE INITIALIZATION PART*/
@@ -35,7 +46,10 @@ h5, h6 {
 /*************************/
 .landing-page {
 	text-align: center;
-	background-color: var(--landing-page-color);	
+	background: url('../images/landing-page.jpg') no-repeat;
+	background-position: center;
+	background-size: cover;
+	background-color: var(--landing-page-bgcolor);	
 	width: 100vw;
 	height: 100vh;
 }
@@ -43,9 +57,18 @@ h5, h6 {
 	padding-top: 15vh;
 }
 .landing-page h1 {
-	color: white;
+	color: var(--font-maroon);
+	font-family: var(--landing-page-font);
 	font-weight: bolder;
+	text-shadow: 3px 3px #555;
 	font-size: 4rem;
+}
+.landing-page h2 {
+	color: var(--font-maroon);
+	/*font-family: var(--landing-page-font);*/
+	font-weight: bolder;
+	text-shadow: 2px 2px #555;
+	font-size: 3rem;
 }
 .landing-page i {
 	font-size: 3rem;
@@ -92,6 +115,7 @@ h5, h6 {
 /**********************************/
 .card {
 	width: 100%;
+	box-shadow: 0 0 20px 1px #555;
 }
 .card img {
 	height: 200px;
@@ -169,5 +193,22 @@ h5, h6 {
 	#about > div:last-child img {
 		width: 100%;
 		height: 250px;
+	}
+}
+
+@media only screen and (min-width: 601px) {
+	/**********************************/
+	/*THIS IS THE START OF HOME BANNER*/
+	/**********************************/
+	.carousel-item h3, .carousel-item label {
+		font-weight: bolder;
+	}
+	#carousel-controls {
+		margin: 0 auto;
+		width: 100%;
+		height: calc(70vh - 60px);
+	}
+	.carousel-item img {
+		height: calc(70vh - 60px);
 	}
 }
