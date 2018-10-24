@@ -2,7 +2,7 @@
 $(document).ready(function() {
 	let baseURL = (window.location.href).split('#')[0];
 
-	fetchAndLoad('home');
+	fetchAndLoad('landing-page');
 	
 	$('body').on('click', '#index', function() {
 		fetchAndLoad('home');
@@ -14,8 +14,13 @@ $(document).ready(function() {
 	});
 
 	$('body').on('click', 'a', function() {
+		if($(this)[0].href.split('#')[1] == null) {
+			fetchAndLoad('home');
+		} else {
+			fetchAndLoad($(this)[0].href.split('#')[1]);
+		}
 		
-		fetchAndLoad($(this)[0].href.split('#')[1]);
+		
 	});
 	
 	$('body').on('click', '.nav-item', function() {

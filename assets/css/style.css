@@ -64,6 +64,7 @@ textarea {
 .navbar-brand img {
 	width: 100px;
 	height: 50px;
+	box-shadow: 0 0 0 0;
 }
 
 /*************************/
