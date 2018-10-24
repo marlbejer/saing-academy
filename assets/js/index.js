@@ -1,28 +1,27 @@
 
 $(document).ready(function() {
 	let baseURL = (window.location.href).split('#')[0];
-	// fetch('landing-page.html')
-	// 	.then($('#stickynav').hide())
-	// 	.then($('#contactFooter').hide())
-	// 	.then(response => response.text())
-	// 	.then(response => $('#main').html(response))
-	// 	.then(window.location.href = `${baseURL}#home`);
-	fetchAndLoad('home', 'landing-page');
+
+	fetchAndLoad('home');
 	
 	$('body').on('click', '#index', function() {
-		fetchAndLoad('home', 'landing-page');
+		fetchAndLoad('home');
 	});
 
 	$('body').on('click', '.navbar-brand', function() {
-		let toremove = getCurrentPage(window.location.href)
-		fetchAndLoad('landing-page', toremove);
+		// let toremove = getCurrentPage(window.location.href)
+		fetchAndLoad($(this)[0].href.split('#')[1]);
 	});
 
+	$('body').on('click', 'a', function() {
+		
+		fetchAndLoad($(this)[0].href.split('#')[1]);
+	});
+	
 	$('body').on('click', '.nav-item', function() {
-		let toremove = getCurrentPage(window.location.href),
-		 	toload = $(this).find('a').text().toLowerCase().replace(' ','');
-
-		fetchAndLoad(toload, toremove);
+		let toload = $(this).find('a').text().toLowerCase().replace(' ','');
+		fetchAndLoad(toload);
+		$('#navbar-nav').removeClass('show');
 	});
 	
 	function getCurrentPage(url) {
@@ -30,8 +29,9 @@ $(document).ready(function() {
 		return urlArray[urlArray.length - 1];
 	}
 
-	function fetchAndLoad(toload, toremove) {
-		console.log(`toload: ${toload}, toremove: ${toremove}`);
+	function fetchAndLoad(toload) {
+		let loadIfError = (window.location.href).split('#')[1];
+
 		if(toload != 'landing-page') {
 			$('#stickynav').show();
 			$('#contactFooter').show()
@@ -41,13 +41,13 @@ $(document).ready(function() {
 		}
 		
 		fetch(toload + '.html')			
-			.then($('#' + toremove).remove())
+			.then($('#main div').remove())
 			.then(response => response.text())
 			.then(response => $('#main').html(response))
 			.then(() => {
 				$([document.documentElement, document.body]).animate({
-			        scrollTop: $('#' + toload).offset().top
-			    }, 1000);
+			        scrollTop: $('#' + toload).offset().top - 80
+			    }, 100);
 			})
 			.then(() => $('#navbar-nav li').each(function(i, v){
 				$(this).removeClass('active');
@@ -57,7 +57,10 @@ $(document).ready(function() {
 					$(this).addClass('active');
 					window.location.href = `${baseURL}#${toload}`;
 				}
-			}));
+			}))
+			.catch(function(err){
+				fetchAndLoad(loadIfError);
+			});
 
 		
 		

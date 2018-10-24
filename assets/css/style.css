@@ -28,6 +28,7 @@ h5, h6 {
 h1, h2 {
 	text-shadow: 2px 2px #555;
 }
+
 .active {
 	color: white;
 }
@@ -35,8 +36,11 @@ h1, h2 {
 	border-radius: 0;
 }
 
-.btn {
+.btn, .form-control, textarea {
 	border-radius: 0;
+}
+textarea {
+	resize: none;
 }
 .container-fluid > div > div {
 	margin-bottom: 40px;
@@ -145,7 +149,8 @@ h1, h2 {
 .card {
 	width: 100%;
 	box-shadow: 0 0 20px 1px #555;
-	height: 420px;
+	/*height: 420px;*/
+	height: auto;
 }
 .card img {
 	height: 200px;
@@ -249,9 +254,30 @@ h1, h2 {
 	margin-bottom: 0;
 }
 
+#contactus > div {
+	margin-bottom: 20px;
+}
 #contactus form {
 	margin-bottom: 30px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @media only screen and (min-width: 601px) {
 	/********************************/
