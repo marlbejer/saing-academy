@@ -10,7 +10,8 @@
 	<title>Saing Culinary</title>
 
 	<!-- LINK OF ALL CSS FILES TO BE USE -->
-	<link href="https://fonts.googleapis.com/css?family=Lato|Kaushan+Script" rel="stylesheet">
+	<link rel="icon" type="image/png" href="assets/images/cookbook.png">
+	<link href="https://fonts.googleapis.com/css?family=Lato|Kaushan+Script|Montserrat" rel="stylesheet">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/css/style.css">
@@ -18,10 +19,65 @@
 
 </head>
 <body>
-	<div class="container-fluid">			
-		<div id="main"></div>
-	</div>
+	<div class="container-fluid">	
+		
+		<div id="stickynav" class="row sticky-top">
+			<nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-info">
+				<a class="navbar-brand" href="#">
+					<img src="assets/images/logo.png" alt="blank">
+				</a>
+				<button class="navbar-toggler" data-toggle="collapse" data-target="#navbar-nav">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div id="navbar-nav" class="collapse navbar-collapse">
+					<ul class="navbar-nav ml-auto">					
+						<li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+						<li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+						<li class="nav-item"><a class="nav-link" href="#faculties">Faculties</a></li>
+						<li class="nav-item"><a class="nav-link" href="#trainings">Trainings</a></li>
+						<li class="nav-item"><a class="nav-link" href="#contactus">Contact Us</a></li>				
+					</ul>
+				</div>
+			</nav>
+		</div>
 
+
+
+		<div id="main"></div>		
+
+
+
+		<div id="contactFooter" class="row">
+			<div class="col-12 col-md-6">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3860.209076908933!2d121.05714971514406!3d14.644069939774777!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b77458a61fc3%3A0x676d81d41e37d92c!2sTeachers+Village+East%2C+Diliman%2C+Quezon+City%2C+Metro+Manila!5e0!3m2!1sen!2sph!4v1540281914824" width="100%" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
+			</div>
+			<div class="col-12 col-md-3">
+				<p><strong><i class="fas fa-home"></i></strong> Teachers Village East, Diliman, Quezon City</p>	
+				<p><strong><i class="fas fa-mobile-alt"></i></strong> +639201478563</p>
+				<p><strong><i class="fas fa-phone"></i></strong> +6328547896</p>
+			</div>
+			<div class="col-12 col-md-3">
+				<p><strong>Disclaimer</strong>: All images/photos and icons were from other sources like <a href="https://www.pexels.com">Pexels, </a><a href="https://fontawesome.com">FontAwesome</a>, <a href="http://www.firstgourmetacademy.com">First Gourmet Academy</a> & <a href="https://www.google.com/">Google</a> search. These were use ONLY for training and educational purposes.</p>
+				
+			</div>
+			<div class="col-12 col-md-12">
+				<ul>
+					<li><a href="https://www.facebook.com/">
+						<i class="fab fa-facebook"></i>
+					</a></li>
+					<li><a href="https://twitter.com/">
+						<i class="fab fa-twitter-square"></i>
+					</a></li>
+					<li><a href="https://www.instagram.com/?hl=en">
+						<i class="fab fa-instagram"></i>
+					</a></li>
+					<li><a href="https://www.youtube.com/">
+						<i class="fab fa-youtube"></i>
+					</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
 	<!-- jquery first then popper then bootstrap js -->
 	<script src="assets/js/jquery-3.3.1.min.js"></script>
 

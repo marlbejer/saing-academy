@@ -1,25 +1,40 @@
 :root {
 	--landing-page-bgcolor: rgb(95,158,160);
-	--landing-page-color: #17a2b8;
+	--landing-page-font-color: #17a2b8;
 	--landing-page-font: 'Kaushan Script', cursive;
-	--heading-carousel-color: #17a2b8;
-	--heading-color: rgb(128,0,0);
+
+	--heading1-color: rgb(0,128,255);/*#17a2b8;*/
+	--heading2-color: rgb(128,0,0);
+
 	--bg-maroon: rgb(139,0,0);
-	--font-maroon: rgb(139,0,0);
-	--bg-footer: #17a2b8; /*rgb(135,206,250);*/
+	--bg-footer: #17a2b8;
 }
 
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	font-family: 'Montserrat', sans-serif;
 }
-
+img {
+	width: 100%;
+	box-shadow: 0 0 10px -1px #555;
+}
 h1, h2,
 h3, h4,
 h5, h6 {
-	color: var(--heading-carousel-color);
+	color: var(--heading1-color);
 }
+h1, h2 {
+	text-shadow: 2px 2px #555;
+}
+.active {
+	color: white;
+}
+.card {
+	border-radius: 0;
+}
+
 .btn {
 	border-radius: 0;
 }
@@ -34,6 +49,11 @@ h5, h6 {
 /*ABOVE IS THE INITIALIZATION PART*/
 /**********************************/
 
+/*#navbar {
+	width: 100%;
+	position: fixed;
+	z-index: 5;
+}*/
 #navbar {
 	width: 100%;
 }
@@ -41,12 +61,13 @@ h5, h6 {
 	width: 100px;
 	height: 50px;
 }
+
 /*************************/
 /*THIS IS MY LANDING PAGE*/
 /*************************/
 .landing-page {
 	text-align: center;
-	background: url('../images/landing-page.jpg') no-repeat;
+	background: url('../images/landing-page-1.jpg') no-repeat;
 	background-position: center;
 	background-size: cover;
 	background-color: var(--landing-page-bgcolor);	
@@ -54,24 +75,23 @@ h5, h6 {
 	height: 100vh;
 }
 .landing-page * {
-	padding-top: 15vh;
+	padding-top: 6vh;
 }
 .landing-page h1 {
-	color: var(--font-maroon);
+	color: var(--landing-page-font-color);
 	font-family: var(--landing-page-font);
 	font-weight: bolder;
-	text-shadow: 3px 3px #555;
-	font-size: 4rem;
+	text-shadow: 3px 3px #222;
+	font-size: 3rem;
 }
 .landing-page h2 {
-	color: var(--font-maroon);
-	/*font-family: var(--landing-page-font);*/
-	font-weight: bolder;
-	text-shadow: 2px 2px #555;
-	font-size: 3rem;
+	color: var(--landing-page-font-color);
+	text-shadow: 3px 3px #222;
+	font-size: 2rem;
 }
 .landing-page i {
 	font-size: 3rem;
+	text-shadow: 1px 1px #222;
 }
 
 
@@ -96,18 +116,27 @@ h5, h6 {
 	transform: translateY(-50%);
 }
 .reponsive-note label {
-	color: var(--heading-color);
+	color: var(--heading2-color);
 }
 
 /********************************/
 /*THIS IS THE START OF ABOUT DIV*/
 /********************************/
-#about > div:first-child img,
-#about > div:last-child img {
+.about {
+	margin-top: 20px;
+}
+.about * {
+	margin-bottom: 10px;
+}
+.about > div:first-child img,
+.about > div:last-child img {
 	width: 100%;
 	height: 150px;
 }
-#about > div > div > div {
+.about > div {
+	margin-bottom: 20px;
+}
+.about > div > div > div {
 	margin-bottom: 5px;
 }
 /**********************************/
@@ -116,6 +145,7 @@ h5, h6 {
 .card {
 	width: 100%;
 	box-shadow: 0 0 20px 1px #555;
+	height: 420px;
 }
 .card img {
 	height: 200px;
@@ -185,21 +215,68 @@ h5, h6 {
 	color: rgb(178,34,34);
 }
 
+
+/*************************************/
+/*THIS IS THE START OF HTML PAGE CSS*/
+/******** Created By: Marlon**********/
+/*********Dated: 10/24/2018***********/
+/*************************************/
+
+
+#about img {
+	height: 15rem;
+}
+
+#about #header h1, 
+#faculties #header h1, 
+#trainings #header h1,
+#contactus #header h1 {
+	display: flex;
+	align-items: center;
+	justify-content: left;
+	width: 90vw;
+}
+
+#faculties > div * {
+	margin-bottom: 20px;
+}
+
+#trainings > div * {
+	margin-bottom: 20px;
+}
+
+#trainings h5, #trainings h4 {
+	margin-bottom: 0;
+}
+
+#contactus form {
+	margin-bottom: 30px;
+}
+
 @media only screen and (min-width: 601px) {
 	/********************************/
 	/*THIS IS THE START OF ABOUT DIV*/
 	/********************************/
-	#about > div:first-child img,
-	#about > div:last-child img {
+	.landing-page * {
+		padding-top: 15vh;
+	}
+	.landing-page h1 {
+		font-size: 4rem;
+	}
+	.landing-page h2 {
+		font-size: 3rem;
+	}
+	.landing-page i {
+		font-size: 3rem;
+	}
+	.about > div:first-child img,
+	.about > div:last-child img {
 		width: 100%;
 		height: 250px;
 	}
-}
-
-@media only screen and (min-width: 601px) {
-	/**********************************/
-	/*THIS IS THE START OF HOME BANNER*/
-	/**********************************/
+	.about > div {
+		margin-bottom: 20px;
+	}
 	.carousel-item h3, .carousel-item label {
 		font-weight: bolder;
 	}
@@ -211,4 +288,31 @@ h5, h6 {
 	.carousel-item img {
 		height: calc(70vh - 60px);
 	}
+
+	/*************************************/
+	/*THIS IS THE START OF ABOUT PAGE CSS*/
+	/******** Created By: Marlon**********/
+	/*********Dated: 10/24/2018***********/
+	/*************************************/
+
+	#about img {
+		height: 20rem;
+	}
+	#about > div * {
+		margin-bottom: 20px;
+	}
+
+}
+
+@media only screen and (min-width: 961px) {
+	/**********************************/
+	/*THIS IS THE START OF HOME BANNER*/
+	/**********************************/
+
+	/*************************************/
+	/*THIS IS THE START OF ABOUT PAGE CSS*/
+	/******** Created By: Marlon**********/
+	/*********Dated: 10/24/2018***********/
+	/*************************************/
+
 }

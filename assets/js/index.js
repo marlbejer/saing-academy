@@ -1,26 +1,28 @@
 
 $(document).ready(function() {
-
-	fetch('landing-page.html')
-		.then(response => response.text())
-		.then(response => $('#main').html(response));
+	let baseURL = (window.location.href).split('#')[0];
+	// fetch('landing-page.html')
+	// 	.then($('#stickynav').hide())
+	// 	.then($('#contactFooter').hide())
+	// 	.then(response => response.text())
+	// 	.then(response => $('#main').html(response))
+	// 	.then(window.location.href = `${baseURL}#home`);
+	fetchAndLoad('home', 'landing-page');
 	
 	$('body').on('click', '#index', function() {
 		fetchAndLoad('home', 'landing-page');
 	});
 
 	$('body').on('click', '.navbar-brand', function() {
-	// $('.navbar-brand').click(function(){
 		let toremove = getCurrentPage(window.location.href)
 		fetchAndLoad('landing-page', toremove);
 	});
 
 	$('body').on('click', '.nav-item', function() {
 		let toremove = getCurrentPage(window.location.href),
-		 	toload = $(this).find('a').text().toLowerCase();
+		 	toload = $(this).find('a').text().toLowerCase().replace(' ','');
 
-		 	console.log(toremove, toload);
-		 //fetchAndLoad(toload, toremove);
+		fetchAndLoad(toload, toremove);
 	});
 	
 	function getCurrentPage(url) {
@@ -29,6 +31,15 @@ $(document).ready(function() {
 	}
 
 	function fetchAndLoad(toload, toremove) {
+		console.log(`toload: ${toload}, toremove: ${toremove}`);
+		if(toload != 'landing-page') {
+			$('#stickynav').show();
+			$('#contactFooter').show()
+		} else {
+			$('#stickynav').hide();
+			$('#contactFooter').hide();
+		}
+		
 		fetch(toload + '.html')			
 			.then($('#' + toremove).remove())
 			.then(response => response.text())
@@ -42,11 +53,16 @@ $(document).ready(function() {
 				$(this).removeClass('active');
 			}))
 			.then(() => $('#navbar-nav li').each(function(i, v){
-				if($(this).find('a').text().toLowerCase() == toload) {
+				if($(this).find('a').text().toLowerCase().replace(' ','') == toload) {
 					$(this).addClass('active');
-					window.location.href += toload;
+					window.location.href = `${baseURL}#${toload}`;
 				}
 			}));
+
+		
+		
+			
+
 	}
 	
 });
