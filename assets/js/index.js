@@ -54,11 +54,11 @@ $(document).ready(function() {
 			.then($('#main div').remove())
 			.then(response => response.text())
 			.then(response => $('#main').html(response))
-			.then(() => {
-				$([document.documentElement, document.body]).animate({
-			        scrollTop: $('#' + toload).offset().top - 80
-			    }, 100);
-			})
+			// .then(() => {
+				// $([document.documentElement, document.body]).animate({
+			 //        scrollTop: $('#' + toload).offset().top - 80
+			 //    }, 100);
+			// })
 			.then(() => $('#navbar-nav li').each(function(i, v){
 				$(this).removeClass('active');
 			}))
@@ -66,6 +66,7 @@ $(document).ready(function() {
 				if($(this).find('a').text().toLowerCase().replace(' ','') == toload) {
 					$(this).addClass('active');
 					window.location.href = `${baseURL}#${toload}`;
+					$("html, body").animate({ scrollTop: 0 });
 				}
 			}))
 			.catch(function(err){

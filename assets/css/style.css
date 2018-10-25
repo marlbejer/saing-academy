@@ -31,6 +31,7 @@ h1, h2 {
 
 .active {
 	color: white;
+	font-weight: bolder;
 }
 .card {
 	border-radius: 0;
@@ -46,7 +47,8 @@ textarea {
 	margin-bottom: 40px;
 }
 .container-fluid > div > div:first-child, 
-.container-fluid > div:nth-child(2) {
+.container-fluid > div:nth-child(2),
+.container-fluid > div > div:last-child {
 	margin-bottom: 0;
 }
 /**********************************/
@@ -67,12 +69,44 @@ textarea {
 	box-shadow: 0 0 0 0;
 }
 
+#navbar {
+	padding: 0 0 0 1rem;
+}
+#navbar-nav a {
+	position: relative;
+	display: inline-block;
+	background: none;
+	padding: 40px;
+	/*transition: all 0.5s ease;*/
+}
+
+#navbar-nav a:hover {
+	color: white;
+	font-weight: bolder;;
+}
+#navbar-nav a::after {
+	position: absolute;
+	content: '';
+	color: black;
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 100%;
+	background-color: white;
+	transform-origin: left;
+	transition: all 0.5s ease;
+	z-index: 0;
+	opacity: 0.5;
+}
+#navbar-nav a:hover::after {
+	width: 100%;
+}
 /*************************/
 /*THIS IS MY LANDING PAGE*/
 /*************************/
 .landing-page {
 	text-align: center;
-	background: url('../images/landing-page.jpg') no-repeat;
+	background: url('../images/landing-page-1.jpg') no-repeat;
 	background-position: center;
 	background-size: cover;
 	background-color: var(--landing-page-bgcolor);	
@@ -148,14 +182,47 @@ textarea {
 /*THIS IS THE START OF FACULTY DIV*/
 /**********************************/
 .card {
+	position: relative;
 	width: 100%;
-	box-shadow: 0 0 20px 1px #555;
+	box-shadow: 0 0 10px 1px #999;
 	height: 550px;
+	background-color: none;
 	margin-bottom: 20px;
 }
+.card a {
+	position: absolute;
+	bottom: 20px;
+	left: 20px;
+}
+/*
+.card::after {
+	position: absolute;
+	content: 'Click to read more.';
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	color: maroon;
+	font-weight: bolder;	
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	height: 0;
+	background-color: white;
+	transform-origin: bottom;
+	transition: height 0.5s ease;
+	z-index: 0;
+	visibility: hidden;
+}
+.card:hover::after {
+	height: 50%;
+	visibility: visible;
+}*/
 .card img {
 	height: 200px;
 }
+
+
 /*************************************/
 /*THIS IS THE START OF AFFILIATES DIV*/
 /*************************************/
@@ -216,11 +283,16 @@ textarea {
 #contactFooter a {
 	text-decoration: none;
 }
+/*#contactFooter i:hover, #contactFooter a:hover {
+	color: var(--heading1-color);
+}*/
 #contactFooter > div:last-child i {
 	font-size: 3rem;
 	color: rgb(178,34,34);
 }
-
+#contactFooter > div:last-child i:hover {
+	transform: scale(1.5);
+} 
 
 /*************************************/
 /*THIS IS THE START OF HTML PAGE CSS*/
@@ -341,5 +413,28 @@ textarea {
 	/******** Created By: Marlon**********/
 	/*********Dated: 10/24/2018***********/
 	/*************************************/
+
+}
+
+@media only screen and (max-height: 450px) and  (orientation: landscape) {
+	.landing-page * {
+		padding-top: 8vh;
+	}
+	.landing-page h1 {
+		color: var(--landing-page-font-color);
+		font-family: var(--landing-page-font);
+		font-weight: bolder;
+		text-shadow: 2px 2px #222;
+		font-size: 3rem;
+	}
+	.landing-page h2 {
+		color: var(--landing-page-font-color);
+		text-shadow: 1px 1px #222;
+		font-size: 2rem;
+	}
+	.landing-page i {
+		font-size: 2rem;
+		text-shadow: 1px 1px #222;
+	}
 
 }
