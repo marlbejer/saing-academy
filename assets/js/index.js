@@ -14,11 +14,16 @@ $(document).ready(function() {
 	});
 
 	$('body').on('click', 'a', function() {
-		if($(this)[0].href.split('#')[1] == null) {
+		let location = $(this)[0].href.split('#')[1];
+		if(location == null) {
 			fetchAndLoad('home');
-		} else {
-			fetchAndLoad($(this)[0].href.split('#')[1]);
+		} 
+		else if (location.search('carousel') == 0) {
+			//return false;
 		}
+		else {
+			fetchAndLoad($(this)[0].href.split('#')[1]);
+		}	
 		
 		
 	});

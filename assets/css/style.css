@@ -150,8 +150,8 @@ textarea {
 .card {
 	width: 100%;
 	box-shadow: 0 0 20px 1px #555;
-	/*height: 420px;*/
-	height: auto;
+	height: 550px;
+	margin-bottom: 20px;
 }
 .card img {
 	height: 200px;
