@@ -72,7 +72,7 @@ textarea {
 /*************************/
 .landing-page {
 	text-align: center;
-	background: url('../images/landing-page-1.jpg') no-repeat;
+	background: url('../images/landing-page.jpg') no-repeat;
 	background-position: center;
 	background-size: cover;
 	background-color: var(--landing-page-bgcolor);	
