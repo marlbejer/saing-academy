@@ -46,10 +46,14 @@ textarea {
 .container-fluid > div > div {
 	margin-bottom: 40px;
 }
-.container-fluid > div > div:first-child, 
+/*.container-fluid > div > div:first-child, 
 .container-fluid > div:nth-child(2),
-.container-fluid > div > div:last-child {
+.container-fluid > div > div:last-child {*/
+.container-fluid > header, 
+.container-fluid > main,
+.container-fluid > footer {
 	margin-bottom: 0;
+
 }
 /**********************************/
 /*ABOVE IS THE INITIALIZATION PART*/
@@ -184,15 +188,25 @@ textarea {
 .card {
 	position: relative;
 	width: 100%;
-	box-shadow: 0 0 10px 1px #999;
+	/*box-shadow: 0 0 10px 1px #999;*/
 	height: 550px;
-	background-color: none;
+	/*background-color: none;*/
 	margin-bottom: 20px;
+}
+a[href="#about"] > .btn {
+	transition: all 0.2s ease-out;
 }
 .card a {
 	position: absolute;
 	bottom: 20px;
 	left: 20px;
+	box-shadow: 0 0 10px 1px #999;
+	transition: all 0.2s ease-in;
+	
+}
+.card a:hover, a[href="#about"] > .btn:hover {
+	box-shadow: 0 0 10px 3px #999;
+	transform: scale(1.2);
 }
 /*
 .card::after {
@@ -226,6 +240,9 @@ textarea {
 /*************************************/
 /*THIS IS THE START OF AFFILIATES DIV*/
 /*************************************/
+#affiliates {
+	padding: 20px 0;
+}
 #affiliates ul {
 	display: flex;
 	text-align: center;
@@ -238,10 +255,15 @@ textarea {
 	list-style: none;
 	margin-right: 10px;
 	width: 20%;
+	transition: all 0.2s linear;
+}
+#affiliates img:hover {
+	transform: rotate(5deg);
 }
 #affiliates img {
 	width: 50%;
 }
+
 /*************************************/
 /*THIS IS THE START OF Contact Link DIV*/
 /*************************************/
@@ -263,6 +285,9 @@ textarea {
 /*********************************/
 /*THIS PART IS FOR CONTACT FOOTER*/
 /*********************************/
+#contactFooter {
+	padding-top: 20px;
+}
 #contactFooter > div:last-child {
 	background-color: var(--bg-footer);
 	padding-top: 1rem;
@@ -289,6 +314,7 @@ textarea {
 #contactFooter > div:last-child i {
 	font-size: 3rem;
 	color: rgb(178,34,34);
+	transition: transform 0.2s ease-out;
 }
 #contactFooter > div:last-child i:hover {
 	transform: scale(1.5);
