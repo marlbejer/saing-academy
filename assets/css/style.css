@@ -179,13 +179,13 @@ textarea {
 	height: 15px;
 	width: 15px;
 	border-radius: 50%;
-	background-color: black;
+	background-color: maroon;
 }
-#carousel-controls li .active {
+#carousel-controls .carousel-indicators > .active {
 	height: 15px;
 	width: 15px;
 	border-radius: 50%;
-	border: 2px solid black;
+	border: 2px solid maroon;
 	background-color: white;
 }
 .carousel-control-next-icon,
