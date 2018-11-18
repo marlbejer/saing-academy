@@ -43,8 +43,9 @@ h1, h2 {
 textarea {
 	resize: none;
 }
+
 .container-fluid {
-	max-width: 1024px;
+	background-color: whitesmoke;
 }
 .container-fluid > div > div {
 	margin-bottom: 40px;
@@ -452,6 +453,13 @@ a[href="#about"] > .btn {
 	/******** Created By: Marlon**********/
 	/*********Dated: 10/24/2018***********/
 	/*************************************/
+
+	body {
+		background-color: tomato;
+		background-image: url('../images/kitchen-background1.jpg');
+		max-width: 85%;
+		margin: 0 auto;
+	}
 
 }
 

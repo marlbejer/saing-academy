@@ -50,7 +50,7 @@ $(document).ready(function() {
 			$('#contactFooter').hide();
 		}
 		
-		fetch(toload + '.html')			
+		fetch('pages/' + toload + '.html')			
 			.then($('#main div').remove())
 			.then(response => response.text())
 			.then(response => $('#main').html(response))
